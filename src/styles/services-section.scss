@@ -1,0 +1,116 @@
+.services-section {
+  padding: 100px 0 80px;
+  background: linear-gradient(180deg, rgba(0, 78, 134, 0.8) 0%, rgba(10, 65, 104, 0.8) 100%),
+    url(../assets/bg-services.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  &__title {
+    font-family: Bebas Neue;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 16px;
+    letter-spacing: 20px;
+    color: $yellow;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  &__subtitle {
+    font-family: Gilroy;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 42px;
+    letter-spacing: -0.5px;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 49px;
+  }
+}
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.swiper-wrapper {
+  padding-bottom: 61px;
+}
+.swiper-slide {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  &__img {
+    margin-bottom: 30px;
+    width: 100%;
+    height: 180px;
+  }
+  & h3 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: -0.5px;
+    font-weight: 800;
+    color: #ffffff;
+    align-self: flex-start;
+  }
+  & p {
+    margin-bottom: 29px;
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: -0.5px;
+    font-weight: 600;
+    color: #ffffff;
+    opacity: 0.7;
+  }
+  & a {
+    display: flex;
+    align-self: flex-start;
+    align-items: center;
+    & span {
+      font-family: Bebas Neue;
+      font-size: 20px;
+      letter-spacing: 7px;
+      font-weight: 700;
+      color: $yellow;
+      cursor: pointer;
+    }
+    & img {
+      width: 22px;
+      height: 10px;
+      cursor: pointer;
+    }
+    transition: all 0.3s ease-in-out;
+  }
+}
+.swiper-scrollbar-drag {
+  background: linear-gradient(270deg, #fee040 0%, rgba(254, 224, 64, 0) 100%);
+  scrollbar-color: red;
+}
+@media screen and (max-width: 868px) {
+  .services-section {
+    padding: 60px 0 20px 0;
+  }
+}
+@media screen and (max-width: 668px) {
+  .swiper-slide {
+    width: 300px;
+
+    &__img {
+      margin-bottom: 30px;
+      width: 100%;
+      height: 135px;
+    }
+  }
+}
