@@ -9,19 +9,10 @@ if (process.env.NODE_ENV === "production") {
   target = "browserslist";
 }
 
-const plugins = [
-  new MiniCssExtractPlugin({
-    filename: "[name].[contenthash].css",
-  }),
-  new HtmlWebpackPlugin({
-    template: "./src/index.html",
-  }),
-];
-
 module.exports = {
   mode,
   target,
-  plugins,
+  //   plugins,
   devtool: "source-map",
   entry: "./src/main.js",
   devServer: {
@@ -43,12 +34,16 @@ module.exports = {
     rules: [
       { test: /\.(html)$/, use: ["html-loader"] },
       {
-        test: /\.(s[ac]|c)ss$/i,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader", "sass-loader"],
+        test: /\.scss$/,
+        use: ["style-loader", "css-loader", "sass-loader"],
       },
       {
-        test: /\.(png|jpe?g|gif|svg|webp|ico)$/i,
+        test: /\.svg$/,
         type: mode === "production" ? "asset" : "asset/resource",
+      },
+      {
+        test: /\.(png)$/,
+        type: mode === "production" ? "asset" : "asset/inline",
       },
       {
         test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
@@ -66,4 +61,12 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    // new MiniCssExtractPlugin({
+    //   filename: "[name].[contenthash].css",
+    // }),
+    new HtmlWebpackPlugin({
+      template: "./src/index.html",
+    }),
+  ],
 };

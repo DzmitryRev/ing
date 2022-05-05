@@ -1,5 +1,6 @@
-@mixin font($s, $lh: $s + 10px, $w: 400) {
+@mixin font($s, $lh: $s, $w: 400, $f: Proxima Nova) {
   font: {
+    family: $f;
     size: $s;
     weight: $w;
   }

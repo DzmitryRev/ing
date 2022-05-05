@@ -15,7 +15,7 @@ const swiper = new Swiper(".mySwiper", {
   slidesPerView: "auto",
   //   centeredSlides: true,
   freeMode: true,
-  spaceBetween: 30,
+  spaceBetween: 80,
   mousewheel: {
     releaseOnEdges: true,
   },
@@ -27,15 +27,30 @@ const swiper = new Swiper(".mySwiper", {
   },
 });
 
+const complexSwiper = new Swiper(".myComplexSwiper", {
+  slidesPerView: "auto",
+  //   centeredSlides: true,
+  freeMode: true,
+  spaceBetween: 20,
+  mousewheel: {
+    releaseOnEdges: true,
+  },
+  scrollbar: {
+    el: ".complex-swiper-scrollbar",
+    draggable: true,
+    hide: true,
+    dragClass: "complex-swiper-scrollbar-drag",
+  },
+});
 const wrapper = document.querySelector(".wrapper");
-const swiperMargin = document.querySelector(".swiper-ml");
+const swiperMargin = document.querySelectorAll(".swiper-ml");
 
-swiperMargin.style.marginLeft = 20 + wrapper.offsetLeft + "px";
+swiperMargin.forEach((item) => (item.style.marginLeft = 20 + wrapper.offsetLeft + "px"));
 
 window.addEventListener("resize", () => {
   if (document.documentElement.clientWidth < 468) {
-    swiperMargin.style.marginLeft = 5 + wrapper.offsetLeft + "px";
+    swiperMargin.forEach((item) => (item.style.marginLeft = 5 + wrapper.offsetLeft + "px"));
   } else {
-    swiperMargin.style.marginLeft = 20 + wrapper.offsetLeft + "px";
+    swiperMargin.forEach((item) => (item.style.marginLeft = 20 + wrapper.offsetLeft + "px"));
   }
 });

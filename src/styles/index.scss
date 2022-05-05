@@ -3,6 +3,7 @@
 @import "./header-section.scss";
 @import "./you-are-getting-section.scss";
 @import "./services-section.scss";
+@import "./complex-section.scss";
 
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap");
 
@@ -76,6 +77,11 @@ img {
 .wrapper {
   max-width: 1460px;
   padding: 0 20px;
+  margin: 0 auto;
+}
+
+.big-container {
+  max-width: 1920px;
   margin: 0 auto;
 }
 
